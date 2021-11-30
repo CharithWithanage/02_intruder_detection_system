@@ -21,8 +21,8 @@ void MotionSensor::attachSensor(void (*fun)())
 #ifdef DEBUG_MODE
   Serial.println("Attach Motion Sensor");
 #endif
-  pinMode(this->sensorPin, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(this->sensorPin), fun, CHANGE);
+  pinMode(this->sensorPin, INPUT);
+  attachInterrupt(digitalPinToInterrupt(this->sensorPin), fun, FALLING);
 }
 
 /**
